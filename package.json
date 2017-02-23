@@ -1,0 +1,22 @@
+{
+  "name": "myblog",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nf start -p 3000 --procfile Procfile.dev",
+    "server": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "jade": "~1.11.0",
+    "mongoose": "^4.8.4",
+    "morgan": "~1.7.0",
+    "react-router": "^3.0.2",
+    "serve-favicon": "~2.3.0"
+  }
+}
