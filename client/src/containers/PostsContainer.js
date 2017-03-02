@@ -34,7 +34,7 @@ var PostsContainer = React.createClass({
   render: function() {
     return (
       <div>
-        {this.state.posts ? <PostsTable animals={this.state.posts} deleteHandler={this.deleteHandler} /> : null}
+        {this.state.posts ? <PostsTable posts={this.state.posts} deleteHandler={this.deleteHandler} /> : null}
       </div>
     )
   }

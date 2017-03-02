@@ -1,11 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router'
 
-function AboutTable() {
+function PortfolioTable() {
   return (
     <div>
-      <h1>About</h1>
-      <h3>Hello</h3>
+      <h1>Portfolio</h1>
       <table>
         <thead>
           <tr>
@@ -17,13 +16,10 @@ function AboutTable() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>test</td>
-          </tr>
         </tbody>
       </table>
     </div>
   )
 }
 
-export default AboutTable;
+export default PortfolioTable;

@@ -1,0 +1,52 @@
+html, body {
+  background-color: #031634;
+  color: #CDB380;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: #E8DDCB;
+}
+
+a {
+  color: #CDB380;
+}
+
+#root {
+  padding-left: 5%;
+}
+
+.btn-primary {
+  background-color: #036564;
+  border-color: #CDB380;
+}
+
+.btn-primary:hover {
+  background-color: #033649;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #033649;
+  text-align: center;
+  border-top: 1px solid #CDB380;
+}
+
+.nav-tabs>li>a {
+  border-radius: 0;
+}
+
+.nav-tabs>li>a:hover {
+  background-color: #033649;
+  color: #E8DDCB;
+  border: 1px solid #033649;
+  border-bottom: 1px solid #ddd;
+}
+.nav-tabs>li>a:focus {
+  background-color: #033649;
+  color: #E8DDCB;
+  border-bottom: 1px solid #ddd;
+}
