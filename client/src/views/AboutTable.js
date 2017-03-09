@@ -3,9 +3,9 @@ import {Link} from 'react-router'
 
 function AboutTable() {
   return (
-    <div>
+    <div className='contentContainer'>
       <h1>About</h1>
-      <h3>Hello</h3>
+      <h2>Hello</h2>
       <table>
         <thead>
           <tr>

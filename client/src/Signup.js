@@ -7,7 +7,8 @@ var Signup = React.createClass({
     return (
       {
         username: null,
-        password: null
+        password: null,
+        message: null
       }
     )
   },
@@ -17,28 +18,26 @@ var Signup = React.createClass({
     this.setState(newData)
   },
   onSubmitHandler: function() {
+    var self = this
     $.ajax({
       url: '/signup',
       method: 'POST',
       data: this.state
-    }).done(function(err, data) {
-      if (err) {
-        console.log(err);
+    }).done(function(data) {
+      if (data.message) {
+        self.setState({message: data.message});
       } else {
-        if (data.message) {
-          console.log(data.message);
-          window.location = '/#/signUp'
-        } else {
-          console.log('user registered');
-          window.location = '/#/'
-        }
+        console.log('user registered');
+        window.location = '/#/'
       }
     })
   },
   render: function() {
+    var alertMessage = <div>{this.state.message}</div>
     return (
       <div>
         <h3>Sign Up</h3>
+        {this.state.message ? alertMessage : null}
         <form>
           <input type='text' placeholder='username' onChange={(event) => this.onChangeHandler('username', event.target.value)} />
           <input type='text' placeholder='password' onChange={(event) => this.onChangeHandler('password', event.target.value)} />

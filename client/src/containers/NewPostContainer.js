@@ -20,7 +20,7 @@ var NewPostContainer = React.createClass ({
       method: 'POST',
       data: this.state
     }).done(function(data) {
-      console.log(data)
+      window.location = '/#/posts';
     })
   },
   render: function() {

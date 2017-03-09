@@ -21,9 +21,34 @@ var App = React.createClass ({
       self.setState({user: data})
     })
   },
+  removeCurrentUser: function() {
+    var self = this
+    $.ajax({
+      url: '/#/logout',
+      method: 'GET'
+    }).done(function(data) {
+      self.setState({user: null})
+    })
+  },
+  setCurrentUser: function(user) {
+    this.setState({user: user})
+  },
   componentWillMount: function() {
-    this.getCurrentUser()
-    this.setState({thisYear: new Date()})
+    this.getCurrentUser();
+    this.setState({thisYear: new Date()});
+  },
+  showLogin: function () {
+    const linkStyle = {cursor: 'pointer'}
+    if (this.state.user) {
+      return (<Link onClick={(event) => this.removeCurrentUser()} style={linkStyle}>Log Out</Link>);
+    } else {
+      return (<Link to='/logIn'>Log In</Link>)
+    }
+  },
+  showSignup: function () {
+    if (!this.state.user) {
+      return (<Link to='/signUp'>Sign Up</Link>);
+    }
   },
   render() {
     return (
@@ -42,17 +67,17 @@ var App = React.createClass ({
             <Link to='/posts'>Posts</Link>
           </li>
           <li role='presentation'>
-            <Link to='/logIn'>Log In</Link>
+            {this.showLogin()}
           </li>
           <li role='presentation'>
-            <Link to='/signUp'>Sign Up</Link>
+            {this.showSignup()}
           </li>
           <li role='presentation'>
             <Link to='/'>{this.state.user ? 'Welcome ' + this.state.user.local.username : null}</Link>
           </li>
         </ul>
-        {this.props.children}
-        <div className='footer'>&copy; Spencer Ward - {this.state.thisYear.getFullYear()}</div>
+        {this.props.children && React.cloneElement(this.props.children, {setCurrentUser: this.setCurrentUser, user: this.state.user})}
+        <div className='footer'>&copy; Spencer Ward {this.state.thisYear.getFullYear()}</div>
       </div>
     );
   }

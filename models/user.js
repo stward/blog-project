@@ -7,7 +7,20 @@ var user = new Schema({
   local: {
     username: String,
     password: String
-  }
+  },
+  facebook: {
+    id: String,
+    token: String,
+    name: String,
+    email: String
+  },
+  twitter: {
+    id: String,
+    token: String,
+    displayName: String,
+    userName: String
+  },
+  location: {type: Schema.Types.ObjectId, ref: 'Location'}
 });
 
 user.methods.generateHash = function(password) {

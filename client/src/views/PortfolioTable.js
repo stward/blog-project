@@ -3,7 +3,7 @@ import {Link} from 'react-router'
 
 function PortfolioTable() {
   return (
-    <div>
+    <div className='contentContainer'>
       <h1>Portfolio</h1>
       <table>
         <thead>

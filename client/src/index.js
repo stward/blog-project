@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router'
 import PostsContainer from './containers/PostsContainer'
+import PostDetail from './containers/PostDetail'
 import NewPostContainer from './containers/NewPostContainer'
+import EditPostContainer from './containers/EditPostContainer'
 import AboutContainer from './containers/AboutContainer'
 import PortfolioContainer from './containers/PortfolioContainer'
 import Home from './views/Home';
@@ -21,7 +23,9 @@ var AppWrapper = React.createClass({
           <Route path='/about' component={AboutContainer} />
           <Route path='/portfolio' component={PortfolioContainer} />
           <Route path='/posts' component={PostsContainer} />
+          <Route path='/posts/:postId' component={PostDetail} />
           <Route path='/newPost' component={NewPostContainer} />
+          <Route path='/editPost/:postId' component={EditPostContainer} />
           <Route path='/logIn' component={Login} />
           <Route path='/signUp' component={Signup} />
         </Route>

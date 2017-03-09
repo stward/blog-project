@@ -17,16 +17,19 @@ var Login = React.createClass({
     this.setState(newData)
   },
   onSubmitHandler: function() {
+    var self = this;
     $.ajax({
       url: '/logIn',
       method: 'POST',
       data: this.state
     }).done(function(data) {
+      console.log(data);
       if (data.message) {
         window.location = '/#/'
         console.log('message: ' + data.message);
       } else {
-        window.location = '/#/'
+        self.props.setCurrentUser(data);
+        window.location = '/#/';
         console.log('signed in');
       }
     })
@@ -40,7 +43,7 @@ var Login = React.createClass({
       )
     } else {
       return (
-        <div>
+        <div className='contentContainer'>
           <h3>Log In</h3>
           <form>
             <input type='text' placeholder='username' onChange={(event) => this.onChangeHandler('username', event.target.value)} />

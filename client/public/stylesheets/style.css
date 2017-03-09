@@ -5,27 +5,42 @@ html, body {
 
 h1,h2,h3,h4,h5,h6 {
   color: #E8DDCB;
+  text-align: center;
+}
+
+h3 {
+  text-align: left;
+  margin-top: 40px;
 }
 
 a {
   color: #CDB380;
 }
 
+.nav {
+  margin-left: 5%;
+}
+
 #root {
-  padding-left: 5%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .btn-primary {
   background-color: #036564;
+  color: #E8DDCB;
   border-color: #CDB380;
+  margin-top: 10px;
+  border-radius: 0;
 }
 
 .btn-primary:hover {
   background-color: #033649;
+  border-color: #CDB380;
+  color: #E8DDCB;
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
@@ -49,4 +64,32 @@ a {
   background-color: #033649;
   color: #E8DDCB;
   border-bottom: 1px solid #ddd;
+}
+
+.contentContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+label {
+  padding-top: 10px;
+}
+
+.spacer15 {
+  height: 15px;
+}
+
+.spacer30 {
+  height: 30px;
+}
+
+.line {
+  background: #CDB380;
+  height: 1px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  border-radius: 0;
 }
