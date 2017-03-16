@@ -19,8 +19,8 @@ var user = new Schema({
     token: String,
     displayName: String,
     userName: String
-  },
-  location: {type: Schema.Types.ObjectId, ref: 'Location'}
+  }
+  // location: {type: Schema.Types.ObjectId, ref: 'Location'}
 });
 
 user.methods.generateHash = function(password) {

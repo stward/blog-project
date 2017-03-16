@@ -5,7 +5,9 @@ import $ from 'jquery'
 // stateful component
 var PostsContainer = React.createClass({
   getInitialState: function() {
-    return ({posts: null})
+    return ({
+      posts: null
+    })
   },
   componentWillMount: function() {
     this.getPostsFromServer();
@@ -34,7 +36,7 @@ var PostsContainer = React.createClass({
   render: function() {
     return (
       <div>
-        {this.state.posts ? <PostsTable posts={this.state.posts} deleteHandler={this.deleteHandler} /> : null}
+        {this.state.posts ? <PostsTable user={this.props.user} posts={this.state.posts} deleteHandler={this.deleteHandler} /> : null}
       </div>
     )
   }

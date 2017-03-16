@@ -42,7 +42,7 @@ var App = React.createClass ({
     if (this.state.user) {
       return (<Link onClick={(event) => this.removeCurrentUser()} style={linkStyle}>Log Out</Link>);
     } else {
-      return (<Link to='/logIn'>Log In</Link>)
+      return (<Link to='/logIn'>Log In</Link>);
     }
   },
   showSignup: function () {

@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router'
 
 function PostsTable(props) {
+  console.log(props);
   var posts = props.posts.map(function(item) {
     return (
           <div>

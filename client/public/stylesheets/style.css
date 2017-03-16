@@ -69,6 +69,16 @@ a {
 .contentContainer {
   max-width: 900px;
   margin: 0 auto;
+  padding-bottom: 150px;
+}
+
+.homeContainer img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  max-width: 100%;
+  border: 5px solid #033649;
 }
 
 label {
@@ -92,4 +102,8 @@ label {
 
 .form-control {
   border-radius: 0;
+}
+
+.center {
+  text-align: center;
 }
