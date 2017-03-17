@@ -4,6 +4,7 @@ var NewPostForm = function(props) {
   return (
       <div className='contentContainer'>
         <form>
+          <h1>New Post</h1>
           <div className='formgroup'>
             <label htmlFor='postTitle'>Title</label>
             <input type='text' className='form-control' placeholder='Title' id='postTitle' onChange={(event) => props.onChangeHandler('postTitle', event.target.value)} />

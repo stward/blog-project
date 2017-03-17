@@ -35,24 +35,16 @@ var Login = React.createClass({
     })
   },
   render: function() {
-    if (this.state.user) {
-      return (
-        <div>
-          <div>Welcome {this.state.user.local.username.toUpperCase()}! You are already logged in.</div>
-        </div>
-      )
-    } else {
-      return (
-        <div className='contentContainer'>
-          <h3>Log In</h3>
-          <form>
-            <input type='text' placeholder='username' onChange={(event) => this.onChangeHandler('username', event.target.value)} />
-            <input type='text' placeholder='password' onChange={(event) => this.onChangeHandler('password', event.target.value)} />
-          </form>
-          <button onClick={(event) => this.onSubmitHandler()}>Log In</button>
-        </div>
-      )
-    }
+    return (
+      <div className='contentContainer'>
+        <h3>Log In</h3>
+        <form>
+          <input type='text' placeholder='username' onChange={(event) => this.onChangeHandler('username', event.target.value)} />
+          <input type='text' placeholder='password' onChange={(event) => this.onChangeHandler('password', event.target.value)} />
+        </form>
+        <button className="btn btn-primary" onClick={(event) => this.onSubmitHandler()}>Log In</button>
+      </div>
+    )
   }
 })
 

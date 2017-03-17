@@ -10,7 +10,8 @@ var PostDetail = React.createClass ({
         postBody: null,
         postDate: null,
         newCommentText: null,
-        postComments: null
+        postComments: null,
+        comments: []
       }
     );
   },
@@ -38,25 +39,39 @@ var PostDetail = React.createClass ({
       url: '/api/posts/' + this.props.params.postId + '/comments',
       method: 'POST',
       data: commentData
-    }).done(function (data) {
+    }).done((data) => {
       console.log(data);
+      var newCommentId = data.postComments.pop();
+      var comments = this.state.comments;
+      if (!comments) {
+        comments = [];
+      }
+      var newComment = {_id: newCommentId, author: {local: {username: this.props.user.local.username}}, body: this.state.newCommentText, title: this.state.newCommentTitle};
+      comments.push(newComment);
+      this.setState({comments: comments});
     });
-    var comments = this.state.comments;
-    if (!comments) {
-      comments = [];
-    }
-    var newComment = {author: {local: {username: this.props.user.local.username}}, body: this.state.newCommentText, title: this.state.newCommentTitle};
-    comments.push(newComment);
-    this.setState({comments: comments});
+  },
+  deleteCommentHandler: function(id) {
+    $.ajax({
+      url: '/api/posts/comments/' + id,
+      method: 'DELETE'
+    }).done(function(data) {
+      console.log('react: deleted comment with id: ' + id);
+    });
+    this.setState({comments: this.state.comments.filter(function (item) {
+      return item._id !== id;
+    })
+    });
   },
   renderComments: function () {
     if (this.state.comments) {
-      console.log(this.state.comments);
+      var self = this
       return this.state.comments.map(function (item) {
-        return (<div>
+        return (<div className='commentContainer'>
                   <h3>{item.title}</h3>
                   <p>{item.body}</p>
-                  <span><strong>--{item.author.local.username}</strong></span>
+                  <div><strong>- {item.author && item.author.local ? item.author.local.username : 'Author was banned.'}</strong></div>
+                  <button className='btn btn-primary' onClick={(id) => self.deleteCommentHandler(item._id)}>Delete</button>
                 </div>)
       });
     }
@@ -65,13 +80,12 @@ var PostDetail = React.createClass ({
     return (
        <div className='contentContainer'>
         <div>
-          <h4>{this.state.postTitle}</h4>
+          <h1>{this.state.postTitle}</h1>
           <div>{this.state.postBody}</div>
         </div>
+        <a className="btn btn-primary" href="#/posts">Back to Blog</a>
         <div className='line'></div>
-        <div>
-          <span><strong>Comments</strong></span>
-        </div>
+        <h2>Comments</h2>
         {this.renderComments()}
         <NewCommentForm onChangeHandler={this.onChangeHandler} onSubmitHandler={this.onSubmitHandler}/>
       </div>

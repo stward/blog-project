@@ -35,14 +35,14 @@ var Signup = React.createClass({
   render: function() {
     var alertMessage = <div>{this.state.message}</div>
     return (
-      <div>
+      <div className="contentContainer">
         <h3>Sign Up</h3>
         {this.state.message ? alertMessage : null}
         <form>
           <input type='text' placeholder='username' onChange={(event) => this.onChangeHandler('username', event.target.value)} />
           <input type='text' placeholder='password' onChange={(event) => this.onChangeHandler('password', event.target.value)} />
-          <button onClick={(event) => this.onSubmitHandler()}>Submit</button>
         </form>
+        <button className="btn btn-primary" onClick={(event) => this.onSubmitHandler()}>Submit</button>
       </div>
     )
   }

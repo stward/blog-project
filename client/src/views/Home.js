@@ -12,13 +12,13 @@ var Home = function(props) {
     <div className='contentContainer'>
       <div className="center homeContainer">
         <h1>Welcome {props.user ? props.user.local.username : ''}</h1>
-        <div>This is my web page. At some point there will probably be some cool stuff on the home page, rather than just silly pictures.</div>
-        <img src="images/crazies.jpg" />
-        <img src="images/computars.gif" />
-        <img src="images/maggie.jpg" />
-        <img src="images/dont.jpg" />
+        <div>This is my web page. At some point there will probably be some pretty cool stuff on the home page, rather than just silly pictures.</div>
         <Link to={'/posts'} className='btn btn-primary'>View All Posts</Link>
         {newPostButton}
+        <img src="images/crazies.jpg" />
+        <img src="images/maggie.jpg" />
+        <img src="images/dont.jpg" />
+        <img src="images/computars.gif" />
       </div>
     </div>
   )

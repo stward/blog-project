@@ -24,7 +24,7 @@ var App = React.createClass ({
   removeCurrentUser: function() {
     var self = this
     $.ajax({
-      url: '/#/logout',
+      url: '/logout',
       method: 'GET'
     }).done(function(data) {
       self.setState({user: null})
