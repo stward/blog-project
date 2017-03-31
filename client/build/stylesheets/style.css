@@ -1,0 +1,123 @@
+html, body {
+  background-color: #031634;
+  color: #CDB380;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: #E8DDCB;
+  text-align: center;
+}
+
+h3 {
+  text-align: left;
+  margin-top: 40px;
+}
+
+a {
+  color: #E8DDCB;
+  hover: pointer;
+}
+
+.nav {
+  margin-left: 5%;
+}
+
+#root {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-primary {
+  background-color: #036564;
+  color: #E8DDCB;
+  border-color: #CDB380;
+  margin-top: 10px;
+  border-radius: 0;
+}
+
+.btn-primary:hover {
+  background-color: #033649;
+  border-color: #CDB380;
+  color: #E8DDCB;
+}
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #033649;
+  text-align: center;
+  border-top: 1px solid #CDB380;
+}
+
+.nav-tabs>li>a {
+  border-radius: 0;
+}
+
+.nav-tabs>li>a:hover {
+  background-color: #033649;
+  color: #E8DDCB;
+  border: 1px solid #033649;
+  border-bottom: 1px solid #ddd;
+}
+.nav-tabs>li>a:focus {
+  background-color: #033649;
+  color: #E8DDCB;
+  border-bottom: 1px solid #ddd;
+}
+
+.contentContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 150px;
+}
+
+.homeContainer img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  max-width: 100%;
+  border: 5px solid #033649;
+}
+
+label {
+  padding-top: 10px;
+}
+
+.spacer15 {
+  height: 15px;
+}
+
+.spacer30 {
+  height: 30px;
+}
+
+.line {
+  background: #CDB380;
+  height: 1px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.aboutMeBox {
+  background: #E8DDCB;
+  color: #033649;
+  width: 75%;
+  padding: 50px;
+  margin: 0 auto;
+  border: 3px solid #CDB380;
+  border-radius: 12px;
+  font-size: larger;
+  text-align: justify;
+  box-shadow: inset 0px 0px 50px 2px #033649;
+}
