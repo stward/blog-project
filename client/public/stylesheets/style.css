@@ -113,10 +113,11 @@ label {
   background: #E8DDCB;
   color: #033649;
   width: 75%;
-  padding: 30px;
+  padding: 50px;
   margin: 0 auto;
   border: 3px solid #CDB380;
   border-radius: 12px;
   font-size: larger;
   text-align: justify;
+  box-shadow: inset 0px 0px 50px 2px #033649;
 }

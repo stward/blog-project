@@ -1,19 +1,29 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var postRoutes = require('./routes/posts');
-var passport = require('passport')
-var session = require('express-session')
-var morgan = require('morgan')
-var flash = require('connect-flash')
+var express = require('express'),
+    path = require('path'),
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    mongoose = require('mongoose'),
+    postRoutes = require('./routes/posts'),
+    passport = require('passport'),
+    session = require('express-session'),
+    morgan = require('morgan'),
+    flash = require('connect-flash'),
+    uriUtil = require('mongodb-uri'),
+    index = require('./routes/index');
 
-var index = require('./routes/index');
+var options = {
+  server:  { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+  replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
+};
 
-mongoose.connect("mongodb://localhost/myBlog");
+var mongodbUri = process.env.MONGODB_URI || "mongodb://localhost/myBlog";
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+mongoose.connect(mongooseUri, options);
+
+// mongoose.connect("mongodb://localhost/myBlog");
 
 var app = express();
 
