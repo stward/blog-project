@@ -12,7 +12,6 @@ import Home from './views/Home';
 import Login from './Login';
 import Signup from './Signup';
 import $ from 'jquery';
-import './index.css';
 
 var AppWrapper = React.createClass({
   render: function() {

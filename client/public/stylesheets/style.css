@@ -14,7 +14,8 @@ h3 {
 }
 
 a {
-  color: #CDB380;
+  color: #E8DDCB;
+  hover: pointer;
 }
 
 .nav {
@@ -106,4 +107,16 @@ label {
 
 .center {
   text-align: center;
+}
+
+.aboutMeBox {
+  background: #E8DDCB;
+  color: #033649;
+  width: 75%;
+  padding: 30px;
+  margin: 0 auto;
+  border: 3px solid #CDB380;
+  border-radius: 12px;
+  font-size: larger;
+  text-align: justify;
 }

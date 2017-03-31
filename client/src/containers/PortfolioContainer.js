@@ -57,11 +57,12 @@ var PortfolioContainer = React.createClass({
         <h3>Iterators</h3>
         <pre>
           {`
-            function forLoop () {
-              for (var i = 0; i < arr.length; i++) {
-                console.log(arr[i])
+            function forLoop (a) {
+              for (var i = 0; i < a.length; i++) {
+                console.log(a[i])
               }
             }
+            forLoop()
             // prints "a", "b", "c", "d" to console
           `}
         </pre>
@@ -82,12 +83,13 @@ var PortfolioContainer = React.createClass({
         <p>In this case, a loop can pull specific bits of data out from within an object:</p>
         <pre>
           {`
-            function forLoop () {
-              for (var i = 0; i < arr.length; i++) {
-                console.log(arr[i].name)
-                console.log(arr[i].number)
+            function forLoop (a) {
+              for (var i = 0; i < a.length; i++) {
+                console.log(a[i].name)
+                console.log(a[i].number)
               }
             }
+            forLoop(arr)
             // prints "a", 6, "b", 10, "c", 1 to console
           `}
         </pre>
