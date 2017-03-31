@@ -39,6 +39,13 @@ app.use(session({secret: 'asdf'})) // session secret
 app.use (passport.initialize())
 app.use (passport.session())
 app.use(flash())
+// Express only serves static assets in production
+const isProd = process.env.NODE_ENV === 'production';
+const clientPath = isProd ? 'client/build' : 'client/public';
+
+if (isProd) {
+  app.use(express.static(clientPath));
+}
 
 require('./config/passport')(passport)
 require('./routes/userAuth')(app, passport)
@@ -62,6 +69,10 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, clientPath, 'index.html'));
 });
 
 module.exports = app;
