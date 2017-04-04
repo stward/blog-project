@@ -36,6 +36,46 @@ var PortfolioContainer = React.createClass({
   render: function () {
     return (
       <div className='contentContainer'>
+        <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
+          <ol className="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+          </ol>
+          <h3>JTech Communications</h3>
+          <div className="carousel-inner" role="listbox">
+            <div className="item active">
+              <img src="images/portfolio/gemgallery1.jpg" alt=""/>
+            </div>
+            <div className="item">
+            <img src="images/portfolio/clarkfilmbuying1.jpg" alt=""/>
+            </div>
+            <div className="item">
+              <img src="images/portfolio/nextfx1.jpg" alt=""/>
+            </div>
+            <div className="item">
+              <img src="images/portfolio/shakespeare1.jpg" alt=""/>
+            </div>
+            <div className="item">
+              <img src="images/portfolio/igmata1.jpg" alt=""/>
+            </div>
+            <div className="item">
+              <img src="images/portfolio/bozemanbank1.jpg" alt=""/>
+            </div>
+          </div>
+          <a className="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span className="sr-only">Previous</span>
+          </a>
+          <a className="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
+          </a>
+        </div>
+      <div>
         <h1>GitHub Repos</h1>
         <div className="line"></div>
         <ul>
@@ -93,6 +133,7 @@ var PortfolioContainer = React.createClass({
             // prints "a", 6, "b", 10, "c", 1 to console
           `}
         </pre>
+      </div>
       </div>
     );
   }
