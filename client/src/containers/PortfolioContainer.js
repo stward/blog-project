@@ -37,8 +37,26 @@ var PortfolioContainer = React.createClass({
     return (
       <div className='contentContainer'>
         <div>
-          <h3>Comfort Company</h3>
+          <div className="spacer30"></div>
           <img src="images/portfolio/comfortcompany1.jpg" alt="" style={{maxWidth: '900px'}}/>
+          <h3>Comfort Company</h3>
+          <div className="spacer15"></div>
+          <div>
+            The best example of a project I personally completed by myself. The Comfort Company website was built using Express.js and MongoDB on an NGINX web server.
+          </div>
+          <div className="spacer15"></div>
+          <div>
+            Comfort Company is a manufacturer of high-end seating equipment designed for both active and long-term users.
+          </div>
+          <div className="spacer15"></div>
+          <div>
+            This site features a personal login with multiple user levels, extensive product customization, and ordering. At the end of my time at Comfort Company, the website serviced nearly 4000 customers, with over 8000 users.
+          </div>
+          <div className="spacer15"></div>
+          <div>
+            The site also supports many other features, inclucing search forms, Medicare billing information, directions to products based on patient diagnoses, downloads, sales representative contact forms, and many other things.
+          </div>
+          <div className="spacer30"></div>
         </div>
         <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
           <ol className="carousel-indicators">
@@ -49,7 +67,6 @@ var PortfolioContainer = React.createClass({
             <li data-target="#carousel-example-generic" data-slide-to="4"></li>
             <li data-target="#carousel-example-generic" data-slide-to="5"></li>
           </ol>
-          <h3>JTech Communications</h3>
           <div className="carousel-inner" role="listbox">
             <div className="item active">
               <img src="images/portfolio/nextfx1.jpg" alt=""/>
@@ -79,6 +96,20 @@ var PortfolioContainer = React.createClass({
             <span className="sr-only">Next</span>
           </a>
         </div>
+        <h3>JTech Communications</h3>
+        <div className="spacer15"></div>
+        <div>
+          Probably the place where I got the bulk of my development experience.
+        </div>
+        <div className="spacer15"></div>
+        <div>
+          At JTech Communications, I spent a lot of time meeting with clients, planning and designing the look and content of their websites. Once plans were finalized, I helped with writing code and doing design work throughout the development phase of the project, as well as keeping contact with the client and following up with overlooked and necessary resources.
+        </div>
+        <div className="spacer15"></div>
+        <div>
+          Projects were generally storyboarded with Adobe Photoshop, and written in PHP. Every customer was hooked into JTech's back-end CRM, and had a certain degree of content management available. At JTech, I learned that forming a complete initial plan was imperative to beginning a project. An hour of planning saves a week of coding, as they say.
+        </div>
+        <div className="spacer30"></div>
         <h3>Wordpress, Freelance, Etc.</h3>
         <div>
           <h1>GitHub Repos</h1>
